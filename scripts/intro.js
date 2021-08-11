@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$("#intro1").click(function(){
-
+	$("#intro1").hide()
 	play("THEME1", 0.5)
 	setTimeout(function(){
 		fechaIntro()
@@ -15,11 +15,12 @@ $(document).ready(function() {
 })
 function abreIntro() {
 	$(".intro").show()
+	$("#intro1").show()
 	$(".intro").css("width", "100%")
 	$(".ingame").css("marginLeft", "100%")
 	setTimeout(function(){
 		$(".ingame").hide()
-	}, 3000)
+	}, 10000)
 }
 function fechaIntro() {
 	$(".ingame").show()
@@ -27,7 +28,7 @@ function fechaIntro() {
 	$(".ingame").css("marginLeft", "0%")
 	setTimeout(function(){
 		$(".intro").hide()
-	}, 3000)
+	}, 10000)
 
 }
 
