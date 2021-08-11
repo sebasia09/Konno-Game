@@ -1,0 +1,46 @@
+.ingame{
+  transition: margin-left 3s; 
+   margin-left: 100%;
+}
+
+#navopenbtn {
+ filter: invert(100%);
+width: 50px;
+height: 50px;
+}
+.nav{
+  width: 0%;
+      height: 100%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #282828;
+      opacity: 90%;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+}
+.nav a{
+      padding: 8px 8px 8px 32px;
+      color: #818181;
+      font-size:200% ;
+      display: block;
+      transition: 0.3s;
+    }
+
+     .nav a:hover{
+      color: #f1f1f1;
+     }
+  #navclosebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.main{
+  transition: margin-left .5s; 
+   padding: 20px;
+}
