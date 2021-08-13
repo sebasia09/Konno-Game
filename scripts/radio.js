@@ -6,7 +6,17 @@ var offset = [0,0];
 var mousePosition;
 var radio;
 var radioluz;
+var gotRadio = false;
 $(document).ready(function() {
+  if(!gotRadio){
+    $("#nav4").hide()
+  };
+  $(".getRadio").click(function(){
+    gotRadio = true;
+    $("#nav4").show()
+    $(".getRadio").hide()
+    play("ZIPPER", 1)
+  })
 radio = document.getElementById("radio")
 radioluz = document.getElementById("radiolight")
 
