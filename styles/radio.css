@@ -3,6 +3,7 @@
 width: 410px;
 height: 225px;
 position: absolute;
+z-index: 11;
 }
 .radio a{
 	text-align: center;
@@ -27,4 +28,13 @@ overflow-x: hidden ;
     border-radius: 50%;
     display: inline-block;
 }
-#radiobtn
+.getRadio{
+  position: fixed;
+  top: 0px;
+  right: 100px;
+  width: 100px;
+  height: 50px;
+  border: 3px solid black;
+  text-align: center;
+
+}
