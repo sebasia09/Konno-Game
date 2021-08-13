@@ -9,13 +9,16 @@
     <script src="scripts/alerts.js"></script>
     <script src="scripts/engine.js"></script>
     <script src="scripts/intro.js"></script>
+    <script src="scripts/lanterna.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="styles/intro.css">
 	<link rel="stylesheet" type="text/css" href="styles/ingame.css">
 	<link rel="stylesheet" type="text/css" href="styles/radio.css">
+	<link rel="stylesheet" type="text/css" href="styles/lanterna.css">
 
 </head>
 <body>
+	
 	<div id="INTRO" class="intro">
 		<a id="introtitle">Konno Game</a>
 		<div id="introimg"></div>
@@ -35,6 +38,7 @@
 
 	</div>
 	<div class="ingame" id="GAME" >
+		<div id="cursor"></div>
 		<div class="nav" id="navigation" >
 			
 			<button id="navclosebtn" onclick="closeNav()">X</button>
@@ -48,7 +52,7 @@
 		<img id="navopenbtn" src="styles/imagens/3313637.png" onclick="openNav()" >
 		<div class="main">
 			
-			<div class="radio" id="radio">
+			<div class="radio nohoverable" id="radio">
 				SIGNAL
 				<div id="radiolight"></div> 
 
@@ -56,7 +60,8 @@
 
 					<button id="radiobtn">|||</button>
 			</div>
-		</div>
+			<div class="getRadio hoverable">Radio Emergencial</div>
+					</div>
 	</div>
 
 </body>
