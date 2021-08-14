@@ -10,7 +10,7 @@
   pointer-events: none;
   color: white;
   mix-blend-mode: difference;
-
+  align-items: center;
 
   z-index: 100;
 }
