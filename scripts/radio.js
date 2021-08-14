@@ -8,16 +8,22 @@ var radio;
 var radioluz;
 $(document).ready(function() {
   if(character.gotRadio){
-    $(".getRadio").hide()
+    $("#getRadio").hide()
+     $("#getAntena").click(function(){
+        radioConectou = true;
+        $("#getAntena").hide()
+     })
   } else{
   $("#nav4").hide()
 
       $(".getRadio").click(function(){
           character.gotRadio = true;
           $("#nav4").show()
-          $(".getRadio").hide()
+          $("#getRadio").hide()
+          alertText("gotRadio")
           play("ZIPPER", 1)
       })
+
   }
   
 radio = document.getElementById("radio")
@@ -104,6 +110,10 @@ function apertaBotaoRadio() {          // Se !radioConectou, mostra FAIL | Se ra
       document.getElementById("radiobtn").disabled = true;}, 1);
 
     setTimeout(function(){
+      if(character.gotRadio2==false){
+        alertText("gotRadio2")
+        character.gotRadio2 = true;
+      }
       radioluz.style.backgroundColor = "red" ; document.getElementById("radiobtn").disabled = false; criaMensagemRadio("FAIL"); play("RADIO_NOISE", 1)}, retornaTempoTexto());
       play("RADIO_NOISE", 1)
   } if(radioConectou) {
