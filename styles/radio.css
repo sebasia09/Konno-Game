@@ -29,12 +29,23 @@ overflow-x: hidden ;
     display: inline-block;
 }
 .getRadio{
-  position: fixed;
+  
+  border: 3px solid black;
+  text-align: center;
+
+}
+#getRadio{
+	position: fixed;
   top: 0px;
   right: 100px;
   width: 100px;
   height: 50px;
-  border: 3px solid black;
-  text-align: center;
-
+}
+#getAntena{
+	position: fixed;
+  bottom: 0px;
+  right: 100px;
+  width: 100px;
+  height: 50px;
+	color: black;
 }
