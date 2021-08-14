@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$("#intro1").click(function(){
 	$("#intro1").hide()
-	play("THEME1", 0.5)
+	play("THEME1", 0.1)
 	setTimeout(function(){
 		fechaIntro()
 	},4400)
