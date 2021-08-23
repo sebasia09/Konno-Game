@@ -7,21 +7,32 @@ var mousePosition;
 var radio;
 var radioluz;
 $(document).ready(function() {
-  if(character.gotRadio){
-    $("#getRadio").hide()
-     $("#getAntena").click(function(){
+  $("#getAntena").hide()
+  if(!character.gotAntena){
+    $("#getAntena").click(function(){
+      character.gotAntena = true;
         radioConectou = true;
         $("#getAntena").hide()
+        saveLocal()
      })
+  } else {
+    $("#getAntena").hide()
+  }
+  
+  if(character.gotRadio){
+    $("#getRadio").hide()
+    
+     
   } else{
   $("#nav4").hide()
-
-      $(".getRadio").click(function(){
+      $("#getRadio").click(function(){
           character.gotRadio = true;
           $("#nav4").show()
           $("#getRadio").hide()
+          $("#getAntena").show()
           alertText("gotRadio")
-          play("ZIPPER", 1)
+          play("ZIPPER",  gameVolume)
+          saveLocal()
       })
 
   }
@@ -67,7 +78,7 @@ document.addEventListener('mousemove', function(event) {
 $(document).ready(function(){
     $("#radiobtn").click(function(){
         apertaBotaoRadio()
-        play("RADIO_NOISE",1)
+        play("RADIO_NOISE", gameVolume)
     })
     closeRadio()                       
 })
@@ -102,7 +113,7 @@ efeitoRadio()
   }
 
 function apertaBotaoRadio() {          // Se !radioConectou, mostra FAIL | Se radioConectou, mostra atual.radioMessage e toca atual.radioSound
-  play("RADIO_NOISE", 1)
+  play("RADIO_NOISE",  gameVolume)
   criaMensagemRadio(". . . Tentando Conectar . . .")
   if(!radioConectou) {                            
     setTimeout(function(){
@@ -110,12 +121,12 @@ function apertaBotaoRadio() {          // Se !radioConectou, mostra FAIL | Se ra
       document.getElementById("radiobtn").disabled = true;}, 1);
 
     setTimeout(function(){
-      if(character.gotRadio2==false){
+      if(!character.gotAntena&&!character.gotRadio2){
         alertText("gotRadio2")
         character.gotRadio2 = true;
       }
-      radioluz.style.backgroundColor = "red" ; document.getElementById("radiobtn").disabled = false; criaMensagemRadio("FAIL"); play("RADIO_NOISE", 1)}, retornaTempoTexto());
-      play("RADIO_NOISE", 1)
+      radioluz.style.backgroundColor = "red" ; document.getElementById("radiobtn").disabled = false; criaMensagemRadio("FAIL"); play("RADIO_NOISE",  gameVolume)}, retornaTempoTexto());
+      play("RADIO_NOISE", gameVolume)
   } if(radioConectou) {
       radioluz.style.backgroundColor = "yellow";
       document.getElementById("radiobtn").disabled = true;
@@ -125,11 +136,11 @@ function apertaBotaoRadio() {          // Se !radioConectou, mostra FAIL | Se ra
           document.getElementById("radiobtn").disabled = false; 
           criaMensagemRadio(atual.radioMessage);
           retornaTempoTexto(); 
-          play(atual.radioSound, 1)
+          play(atual.radioSound,  gameVolume)
 
             setTimeout(function(){
               radioluz.style.backgroundColor = "red"; 
-              play("RADIO_NOISE", 1)
+              play("RADIO_NOISE",  gameVolume)
               radioConectou = false;
             }, retornaTempoTexto());
         }, retornaTempoTexto()); 
@@ -146,11 +157,11 @@ function apertaBotaoRadio() {          // Se !radioConectou, mostra FAIL | Se ra
 function openRadio() {             // Mostra o rádio
   if(!radioAberto){
     $("#radio").show()
-  play("RADIO_NOISE", 1);
+  play("RADIO_NOISE",  gameVolume);
   radioAberto = true;
   } else {
     closeRadio()
-    play("RADIO_NOISE", 1);
+    play("RADIO_NOISE",  gameVolume);
     radioAberto = false;
   }
   
