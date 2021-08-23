@@ -1,0 +1,48 @@
+#events {
+	color: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background-color: white;
+	width: 500px;
+	height: 400px;
+	z-index: 99;
+}
+#eventtitle{
+	position: absolute;
+	top: 10px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 490px;
+	height: 60px;
+	text-align: center;
+	font-size: 30px;
+}
+#eventtxt {
+	position: absolute;
+	top: 70px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 490px;
+	height: 270px;
+}
+
+#eventbtn1 {
+	position: absolute;
+	left : 20px;
+	bottom: 5px;
+	width: 200px;
+	height: 50px;
+}
+#eventbtn2 {
+	position: absolute;
+	right: 20px;
+	bottom: 5px;
+	width: 200px;
+	height: 50px;
+}
