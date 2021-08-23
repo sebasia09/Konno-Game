@@ -54,7 +54,6 @@ const gameText = {
       barulho8 : "Os barulhos continuaram por um longo tempo.",
       barulho9 : "Os barulhos pararam, mas seu rádio captou um sinal de alguem.",
       barulho10 : "Os barulhos ficaram mais fortes, um cano de O2 acabou estourando.",
-    
 }
 
 function getRandom(max, min){
